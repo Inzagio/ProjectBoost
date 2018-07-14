@@ -152,31 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82370677184889872, guid: b6a8cf5b6e6b3774b9099301a98b4c33,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 27351ebc41811c34e88e9dcdda0b7a36, type: 3}
-    - target: {fileID: 82370677184889872, guid: b6a8cf5b6e6b3774b9099301a98b4c33,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.331
-      objectReference: {fileID: 0}
-    - target: {fileID: 82370677184889872, guid: b6a8cf5b6e6b3774b9099301a98b4c33,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82370677184889872, guid: b6a8cf5b6e6b3774b9099301a98b4c33,
-        type: 2}
-      propertyPath: BypassListenerEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82370677184889872, guid: b6a8cf5b6e6b3774b9099301a98b4c33,
-        type: 2}
-      propertyPath: m_Pitch
-      value: 0.73
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6a8cf5b6e6b3774b9099301a98b4c33, type: 2}
   m_IsPrefabParent: 0
