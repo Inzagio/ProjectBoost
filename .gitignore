@@ -4,6 +4,9 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+!.gitignore
+!.gitattributes
+!README.md
 
 # Visual Studio cache directory
 .vs/
@@ -13,7 +16,7 @@ ExportedObj/
 .consulo/
 *.csproj
 *.unityproj
-*.sln
+
 *.suo
 *.tmp
 *.user
@@ -25,6 +28,11 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+!/ProjectSettings/
+!/Assets/                # Add Assets folder, but ...
+/Assets/*                # Remove everything under Assets again.
+!/Assets/_core/          # Now add back our core game folders.
+!/Assets/_modules/
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
