@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 23385471762999438}
   - component: {fileID: 65148189967865920}
   m_Layer: 0
-  m_Name: NoseCone
+  m_Name: Nose Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1944710566279934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.73, z: 0}
+  m_LocalPosition: {x: 0, y: 1.726, z: 0}
   m_LocalScale: {x: 1, y: 0.6138662, z: 1}
   m_Children: []
   m_Father: {fileID: 4862701863789304}
@@ -160,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715235980803084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.78, z: 0}
+  m_LocalPosition: {x: -38.58, y: 2.57, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4575392677613044}
@@ -255,7 +255,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ae9c8a8265017af4e8d86ff656315188, type: 2}
+  - {fileID: 2100000, guid: 890222439f07a8a4eb6c52890066c498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -290,7 +290,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ae9c8a8265017af4e8d86ff656315188, type: 2}
+  - {fileID: 2100000, guid: 890222439f07a8a4eb6c52890066c498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -346,12 +346,12 @@ Rigidbody:
   m_GameObject: {fileID: 1715235980803084}
   serializedVersion: 2
   m_Mass: 0.08
-  m_Drag: 0
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!65 &65102003420942012
 BoxCollider:
@@ -507,3 +507,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71fad41e1d780de4d923542dd470c88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rcsThrust: 100
+  _engineThrust: 250

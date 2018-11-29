@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
@@ -63,6 +64,15 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             _rigidBody.AddRelativeForce(Vector3.down);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        var colliderTag = collision.gameObject.tag;
+        if (colliderTag != "Friendly")
+        {
+            print("Dead!");
         }
     }
 }
