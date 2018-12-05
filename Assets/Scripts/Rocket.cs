@@ -1,5 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Rocket : MonoBehaviour
 {
@@ -8,20 +9,31 @@ public class Rocket : MonoBehaviour
     [SerializeField] private float _rcsThrust = 100f;
     [SerializeField] private float _engineThrust = 250f;
 
+    enum State
+    {
+        Alive,
+        Dying,
+        Transcending
+    }
+
+    State state = State.Alive;
+
     // Use this for initialization
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
-
         _thrustAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Rotate();
-        Thrust();
-        Drag();
+        if (state == State.Alive)
+        {
+            Rotate();
+            Thrust();
+            Drag();
+        }
     }
 
     private void Rotate()
@@ -59,6 +71,7 @@ public class Rocket : MonoBehaviour
             _thrustAudio.Stop();
         }
     }
+
     private void Drag()
     {
         if (Input.GetKey(KeyCode.S))
@@ -67,12 +80,32 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        var colliderTag = collision.gameObject.tag;
-        if (colliderTag != "Friendly")
+        var sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (state != State.Alive) return;
+        var tag = collision.gameObject.tag;
+        if (tag == "Finish")
         {
-            print("Dead!");
+            state = State.Transcending;
+            Invoke("LoadNextLevel", 1f);
         }
+        else if (tag != "Friendly")
+        {
+            state = State.Dying;
+            Invoke("LoadFirstLevel", 1f);
+        }
+
+    }
+
+    private void LoadFirstLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    private void LoadNextLevel()
+    {
+        var sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneIndex + 1);
     }
 }

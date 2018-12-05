@@ -3,23 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadNextScene()
+    public void LoadNextScene(Collision collision)
     {
         var currentScene = SceneManager.GetActiveScene().name;
 
-        if (currentScene == "Start Menu")
+        if (currentScene == "Scenes/Start Menu" )
         {
-            SceneManager.LoadScene("Core Game");
+            SceneManager.LoadScene("Scenes/Level 1");
         }
 
-        else if (currentScene == "Core Game")
+        else if (currentScene == "Scenes/Level 1" && collision.gameObject.tag == "Finish")
         {
-            SceneManager.LoadScene("Win Screen");
+            SceneManager.LoadScene("Scenes/Level 2");
+            
         }
 
-        else if (currentScene == "Win Screen")
+        else if (currentScene == "Scenes/Level 2" && collision.gameObject.tag == "Finish")
         {
-            SceneManager.LoadScene("Start Menu");
+            SceneManager.LoadScene("Scenes/Sandbox");
         }
     }
 
